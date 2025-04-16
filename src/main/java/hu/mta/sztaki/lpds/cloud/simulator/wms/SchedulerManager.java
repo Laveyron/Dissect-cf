@@ -2,7 +2,6 @@ package workflow.execution.extension;
 
 import java.util.Calendar;
 
-import autoscalerworkflow.WorkflowAnalysingLevel;
 import hu.mta.sztaki.lpds.cloud.simulator.Timed;
 import hu.mta.sztaki.lpds.cloud.simulator.examples.util.DCCreation;
 import hu.mta.sztaki.lpds.cloud.simulator.iaas.IaaSService;
@@ -24,7 +23,7 @@ public static void main(String[] args) throws Exception {
 		cloud=DCCreation.createDataCentre(FirstFitScheduler.class, AlwaysOnMachines.class, numofNodes, numofCores);
 		Timed.simulateUntilLastEvent();
 		//-2000-005  CYBERSHAKE.n.1000.19.dax
-		Mapper producer =new  Mapper("/Users/scott/dissect-cf/CyberShake_100.xml");
+		Mapper producer =new  Mapper("C:\\Users\\MrYasuo\\Desktop\\github\\java\\Dissect-cf\\CyberShake_100.xml");
 		//Timed.simulateUntilLastEvent(); 28814.33
 		 Engine engine=new Engine(producer, cloud);
 		//Timed.simulateUntilLastEvent();

@@ -25,8 +25,8 @@
 package hu.mta.sztaki.lpds.cloud.simulator.helpers.trace.random;
 
 import java.util.Random;
+import gnu.trove.TDoubleArrayList;
 
-import gnu.trove.list.array.TDoubleArrayList;
 import hu.mta.sztaki.lpds.cloud.simulator.helpers.Chartable;
 
 /**

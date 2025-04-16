@@ -33,4 +33,6 @@ module hu.mta.sztaki.lpds.cloud.simulator.dissectcf {
 	requires it.unimi.dsi.dsiutils;
 	requires org.eclipse.collections.api;
 	requires org.eclipse.collections.impl;
+    requires trove4j.idea;
+    requires org.dom4j;
 }

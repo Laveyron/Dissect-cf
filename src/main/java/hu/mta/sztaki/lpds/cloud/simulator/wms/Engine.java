@@ -8,7 +8,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 
-import autoscalerworkflow.WorkflowAnalysingLevel;
 import hu.mta.sztaki.lpds.cloud.simulator.Timed;
 import hu.mta.sztaki.lpds.cloud.simulator.examples.jobhistoryprocessor.VMKeeper;
 import hu.mta.sztaki.lpds.cloud.simulator.iaas.IaaSService;
@@ -18,8 +17,8 @@ import hu.mta.sztaki.lpds.cloud.simulator.iaas.constraints.ConstantConstraints;
 import hu.mta.sztaki.lpds.cloud.simulator.iaas.constraints.ResourceConstraints;
 import hu.mta.sztaki.lpds.cloud.simulator.iaas.VirtualMachine;
 import hu.mta.sztaki.lpds.cloud.simulator.io.NetworkNode.NetworkException;
-import scheduling.algorithms.MaxMin;
-import scheduling.algorithms.MinMin;
+//import scheduling.algorithms.MaxMin;
+//import scheduling.algorithms.MinMin;
 import hu.mta.sztaki.lpds.cloud.simulator.io.Repository;
 import hu.mta.sztaki.lpds.cloud.simulator.io.VirtualAppliance;
 import workflow.execution.extension.WorkflowJob.StateJob;
@@ -66,10 +65,10 @@ public class Engine  implements WorkflowJob.StateChange {
 	 public static long totalExecutionTime;
 		public static long totalExecTimeWithoutDependencyTransfer;
 		public static long  startExecutionTime;
-	 
-	 
-	 MaxMin MaxMin;
-	 MinMin MinMin;
+
+
+//	 MaxMin MaxMin;
+//	 MinMin MinMin;
 
 	protected double useThisProcPower = Double.MAX_VALUE;
 	public int completedCount = 0;
@@ -83,9 +82,9 @@ public class Engine  implements WorkflowJob.StateChange {
 	public Engine(Mapper producer, IaaSService target) throws Exception{
 		System.out.println("Engine constructor");
 		this.target = target;
-		
-		MaxMin=new MaxMin();
-		MinMin=new MinMin();
+
+//		MaxMin=new MaxMin();
+//		MinMin=new MinMin();
 		//resetIaaS(target);
 		// Collecting the jobs
 		 jobs = producer.getAllJobs();
@@ -113,7 +112,7 @@ public class Engine  implements WorkflowJob.StateChange {
 					maxIaaSmachines = target.machines.size();
 				}
 				
-				fileWriter = new FileWriter("/Users/scott/dissect-cf/output.txt");
+				fileWriter = new FileWriter("output.txt");
 				printWriter = new PrintWriter(fileWriter);
 			
 				

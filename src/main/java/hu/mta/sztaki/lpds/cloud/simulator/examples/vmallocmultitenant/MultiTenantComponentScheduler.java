@@ -148,7 +148,7 @@ public class MultiTenantComponentScheduler implements Helpers {
 					VirtualMachine[] vm = toSchedule.requestVM(new VirtualAppliance(Integer.toString(vaCounter), 0, 0), 
 							hostInstance.getResources(), target, 1);
 					hostVm = vm[0];
-				} catch (VMManagementException | NetworkException e1) {
+				} catch (VMManagementException e1) {
 					e1.printStackTrace();
 				} 
 				hostInstance.setVm(hostVm);

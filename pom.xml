@@ -9,7 +9,23 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <repositories>
+        <repository>
+            <id>mvnrepository</id>
+            <url>https://maven.artifacts.atlassian.com</url>
+        </repository>
+    </repositories>
     <dependencies>
+        <dependency>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>gnu.trove</groupId>
+            <artifactId>trove4j</artifactId>
+            <version>idea-7.0.2</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
