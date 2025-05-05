@@ -9,12 +9,14 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <repositories>
         <repository>
             <id>mvnrepository</id>
             <url>https://maven.artifacts.atlassian.com</url>
         </repository>
     </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.dom4j</groupId>
@@ -53,10 +55,12 @@
             <version>12.0.0.M1</version>
         </dependency>
     </dependencies>
+
     <inceptionYear>2012</inceptionYear>
     <organization>
         <name>University of Innsbruck &amp; MTA SZTAKI</name>
     </organization>
+
     <licenses>
         <license>
             <name>GNU Lesser General Public License (LGPL) version 3.0</name>
@@ -64,23 +68,46 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <build>
         <plugins>
+            <!-- exec plugin to run your main class -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>workflow.execution.extension.SchedulerManager</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- maven compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <release>17</release>
+                    <release>17</release> <!-- Make sure you're using Java 17 or later -->
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
+
+            <!-- maven surefire plugin for tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.0</version>
             </plugin>
+
+            <!-- javadoc plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -89,6 +116,8 @@
                     <show>private</show>
                 </configuration>
             </plugin>
+
+            <!-- source plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -103,6 +132,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- maven jar plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -115,17 +146,13 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Clean plugin (optional, just ensures clean build) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>${basedir}</directory>
-                <filtering>false</filtering>
-                <includes>
-                    <include>COPYING</include>
-                    <include>COPYING.LESSER</include>
-                    <include>README</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 </project>

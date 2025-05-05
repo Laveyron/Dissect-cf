@@ -17,16 +17,16 @@ public static void main(String[] args) throws Exception {
 
 		// The preparation of the clouds
 		IaaSService cloud;
-		int numofCores = 1;
-		int numofNodes=1;
+		int numofCores = 2;
+		int numofNodes = 3;
 		
 		cloud=DCCreation.createDataCentre(FirstFitScheduler.class, AlwaysOnMachines.class, numofNodes, numofCores);
 		Timed.simulateUntilLastEvent();
 		//-2000-005  CYBERSHAKE.n.1000.19.dax
-		Mapper producer =new  Mapper("C:\\Users\\MrYasuo\\Desktop\\github\\java\\Dissect-cf\\CyberShake_100.xml");
+		Mapper producer =new  Mapper("/Users/scott/Dissect-cf/CyberShake_30.xml");
 		//Timed.simulateUntilLastEvent(); 28814.33
-		 Engine engine=new Engine(producer, cloud);
-		//Timed.simulateUntilLastEvent();
+		Engine engine=new Engine(producer, cloud);
+		Timed.simulateUntilLastEvent();
 		long beforeSimu = Calendar.getInstance().getTimeInMillis();
 		System.out.println("Event-handling");
 		Timed.simulateUntilLastEvent();
