@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 0
+	at hu.mta.sztaki.lpds.cloud.simulator.examples.backgroundworkload.CLIExample.main(CLIExample.java:65)

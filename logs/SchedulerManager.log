@@ -1,0 +1,56 @@
+Scaling datacenter to 3 nodes with 2 cpu cores each
+children=28
+Mapper constructor
+Engine constructor
+0=  2  0.001  256000000000    16741
+1=  2  0.001  256000000000    16741
+2=  2  0.001  256000000000    16741
+start release=89001  ID00002
+start release=89001  ID00013
+JobRunner constructor
+toprocess=ID00002  0  89002   VM
+in QueuManager in Tick=ID00002 deleted 
+JobRunner constructor
+toprocess=ID00013  0  89002   VM
+in QueuManager in Tick=ID00013 deleted 
+Running=ID00013   128651
+ID00013=Transfer-from-Central-Storage  128651
+Running=ID00002   128651
+ID00002=Transfer-from-Central-Storage  128651
+ID00002=Transfer-from-Central-Storage  2525005
+ID00013=Transfer-from-Central-Storage  2525214
+ID00002=Transfer-from-Central-Storage  2525260
+toRun=ID00002  len=executeJob  4921614
+ID00013=Transfer-from-Central-Storage  4921695
+toRun=ID00013  len=executeJob  4921942
+Completed=ID00013  4970397
+CompletedID00013 = 48455
+start release=4970397  ID00028
+start release=4970397  ID00016
+start release=4970397  ID00026
+start release=4970397  ID00014
+start release=4970397  ID00018
+start release=4970397  ID00020
+start release=4970397  ID00024
+start release=4970397  ID00022
+jobsNumber=30    completedCount=1
+JobRunner constructor
+Running=ID00028   4970398
+ID00028=Transfer-from-Central-Storage  4970398
+toprocess=ID00028  0  4970398   VM
+in QueuManager in Tick=ID00028 deleted 
+ID00028=Transfer-between-PMs  4970645
+ID00028=Transfer-between-PMs  4971523
+toRun=ID00028  len=executeJob  4972401
+Completed=ID00028  4985631
+CompletedID00028 = 13230
+start release=4985631  ID00029
+jobsNumber=30    completedCount=2
+Completed=ID00002  5000664
+CompletedID00002 = 79050
+start release=5000664  ID00005
+start release=5000664  ID00003
+start release=5000664  ID00009
+start release=5000664  ID00007
+start release=5000664  ID00011
+jobsNumber=30    completedCount=3

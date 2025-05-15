@@ -1,0 +1,38 @@
+Expected parameters:
+1. job trace:
+1A) if a workload specification (e.g. gwf,swf, srtg) file is used as an input then give its full path here
+1B) if a synthetic trace is used then specify its properties here as follows (items should be separated with a dash):
+1Ba) Maximum number of jobs that exist in parallel
+1Bb) The amount of seconds the job startup times should be spread uniformely in a parallel batch
+1Bc) Minimum execution time of a single job
+1Bd) Maximum execution time of a single job
+1Be) Minimum gap between the last and the first job submission of two consequitve parallel batches
+1Bf) Maximum gap between the last and the first job submission of two consequitve parallel batches
+1Bg) Minimum number of processors for a single job
+1Bh) Maximum number of processors for a single job
+1Bi) Total number of processors usable by all parallel jobs
+1B - example) 2/10/10/90/200/200/1/2/4
+2. Jobs and monitoring:
+2A) (optional) if the first charachter of the second parameter is a + then the monitoring is switched off (no converted trace files will be written)
+2B) A range of jobs from the above mentioned trace, if a single number is given then the range is assumed to be starting from 0
+2C) (optional) if the range is followed by an '@', then one can specify to filter the jobs from the above range so they are all supposed to be running at a specific time instance (the time instance is given after the '@' character)
+2 - example) +10-20@10000
+3. Cloud definition
+3A) one either gives a full path to the description of the cloud to be used
+3B) or it is possible to specify a the number of hosts andthe number of cpus in a host and the number of clouds thesehosts should be spread out with the following format:
+3Bi) - number of cpu nodes
+3Bii) - number of cpu cores per node separated with an @
+3Biii) - number of IaaS services the nodes should be split equally separated with an @
+	 Note: if no @ is present in this parameter then the cpu cores are assumed to be 64/node
+3B - example 1) 500@16 (for 500 pms with 16 cores each
+3B - example 2) 5000@16@5 (for 1000 pms with 16 cores each in 5 clouds
+4. energy monitoring polling frequency (only needed when the second parameter does not start with +)
+4 - example) 5000
+
+Supported system properties:
+hu.mta.sztaki.lpds.cloud.simulator.examples.consolidator
+	The consolidator class to be used for all clouds, if an unknown class is listed here we fall back to SimpleConsolidator
+hu.mta.sztaki.lpds.cloud.simulator.examples.consolidator.freq
+	The consolidator frequency to be used for all clouds
+hu.mta.sztaki.lpds.cloud.simulator.examples.verbosity
+	Turn on additional logging information

@@ -1,0 +1,4 @@
+SingleVMOverloader - DISSECT-CF - started at 1747291586654
+PM and VM is prepared 1747291587044
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at hu.mta.sztaki.lpds.cloud.simulator.examples.SingleVMOverloader.main(SingleVMOverloader.java:91)
